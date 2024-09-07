@@ -1,0 +1,43 @@
+// lib/components/navbar.dart
+
+import 'package:flutter/material.dart';
+
+class Navbar extends StatelessWidget implements PreferredSizeWidget {
+  final String? profileImageUrl;
+
+  const Navbar({this.profileImageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.orange, // Cor laranja do Flutter
+      elevation: 0, // Remove a sombra abaixo da AppBar
+      title: Padding(
+        padding: const EdgeInsets.only(left: 8.0), // Adiciona padding à esquerda do logo
+        child: Image.asset(
+          '/assets/images/colegio-pipa-logo.png',
+          height: 40, // Ajuste conforme necessário
+        ),
+      ),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            // Ação do menu hamburguer
+            Scaffold.of(context).openEndDrawer();
+          },
+        ),
+        const Padding( //TIRAR O CONST E COLOCAR FOTO DO PERFIL E CONDICIONAL - SE NAO TIVER FOTO, MOSTRAR PADRAO
+          padding: EdgeInsets.only(right: 16.0), // Espaçamento à direita
+          child: CircleAvatar(
+            radius: 18,
+            backgroundImage: AssetImage('assets/images/colegio-pipa-logo.png'), // Imagem padrão caso não haja URL
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
