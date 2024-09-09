@@ -15,24 +15,25 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: const EdgeInsets.only(left: 8.0), // Adiciona padding à esquerda do logo
         child: Image.asset(
-          '/assets/images/colegio-pipa-logo.png',
+          'assets/images/pipa-negativo.png',
           height: 40, // Ajuste conforme necessário
         ),
       ),
       actions: [
+        const Padding( //TIRAR O CONST E COLOCAR FOTO DO PERFIL E CONDICIONAL - SE NAO TIVER FOTO, MOSTRAR PADRAO
+          padding: EdgeInsets.only(right: 8.0), // Espaçamento à direita
+          child: CircleAvatar(
+            radius: 18,
+            backgroundImage: AssetImage('assets/images/colegio-pipa-logo.png'), // Imagem padrão caso não haja URL
+          ),
+        ),
+        const SizedBox(width: 20),
         IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
             // Ação do menu hamburguer
             Scaffold.of(context).openEndDrawer();
           },
-        ),
-        const Padding( //TIRAR O CONST E COLOCAR FOTO DO PERFIL E CONDICIONAL - SE NAO TIVER FOTO, MOSTRAR PADRAO
-          padding: EdgeInsets.only(right: 16.0), // Espaçamento à direita
-          child: CircleAvatar(
-            radius: 18,
-            backgroundImage: AssetImage('assets/images/colegio-pipa-logo.png'), // Imagem padrão caso não haja URL
-          ),
         ),
       ],
     );
