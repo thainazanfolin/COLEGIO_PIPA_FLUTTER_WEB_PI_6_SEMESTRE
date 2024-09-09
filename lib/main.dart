@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../src/home.dart';
+import 'src/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/home',
+      initialRoute: '/home',  // colocar LOGIN como inicial 
       routes: {
         '/home': (context) => HomeScreen(),
       },

@@ -13,10 +13,10 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.orange, // Cor laranja do Flutter
       elevation: 0, // Remove a sombra abaixo da AppBar
       title: Padding(
-        padding: const EdgeInsets.only(left: 8.0), // Adiciona padding à esquerda do logo
+        padding: const EdgeInsets.only(left: 8.0, top: 5.0, bottom: 5.0), // Adiciona padding à esquerda do logo
         child: Image.asset(
-          'assets/images/pipa-negativo.png',
-          height: 40, // Ajuste conforme necessário
+          '../../assets/images/pipa-negativo.png',
+          height: 60, // Ajuste conforme necessário
         ),
       ),
       actions: [
@@ -24,7 +24,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(right: 8.0), // Espaçamento à direita
           child: CircleAvatar(
             radius: 18,
-            backgroundImage: AssetImage('assets/images/colegio-pipa-logo.png'), // Imagem padrão caso não haja URL
+            backgroundImage: AssetImage('assets/images/user-flavia.png'), // Imagem padrão caso não haja URL
           ),
         ),
         const SizedBox(width: 20),
